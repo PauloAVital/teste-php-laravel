@@ -1,0 +1,229 @@
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+input[type='file'] {
+    display: none
+  }
+  
+  .input-wrapper label {
+    background-color: #3498db;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px;
+    padding: 6px 20px
+  }
+  
+  .input-wrapper label:hover {
+    background-color: #2980b9
+  }
+
+  .button-input-file {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    vertical-align: middle;
+    border: 1px solid;
+    border-radius: 6px;
+    color: #3498db;
+    background-color: #fafbfc;
+    border-color: #1b1f2326;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
+    padding: 6px 20px;
+  }
+  
+  .button-input-file:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+    padding: 6px 20px;
+  }
+  
+  .button-input-file:hover {
+    color: #ffffff;
+      background-color: #3498db;
+      border-color: #1b1f2326;
+      box-shadow: rgba(27, 31, 35, 0.1) 0px 1px 0px 0px, rgba(255, 255, 255, 0.03) 0px 1px 0px 0px inset;
+      transition-duration: 0.1s;
+      padding: 6px 20px;
+  }
+
+
+  #wrapper {
+    display: flex;
+  }
+  
+  #left {
+    flex: 0 0 70%;
+  }
+  
+  #right {
+    flex: 1;
+  } 
+
+
+  table {
+    font-weight: 400;
+    min-width: 420px;
+    width: 100%;
+    
+    thead {
+      display: none;
+      font-weight: 500;
+    }
+    
+    tbody {
+      tr {
+        border: 1px solid #dad6eb;
+        border-radius: 5px;
+        display: block;
+        padding: 30px;
+        margin-bottom: 30px;
+        
+        td {
+          display: block;
+          font-weight: 500;
+          padding: 5px;
+          position: relative;
+          text-align: right;
+          
+          button {
+            background: #927cfe;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px transparentize(#222, .8);
+            bottom: -30px;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            left: 50%;
+            padding: 10px 0;
+            position: absolute;
+            transform: translate(-50%, 50%);
+            transition: background .12s ease-out;
+            width: 50%;
+            
+            &:hover,
+            &:focus {
+              background: lighten(#927cfe, 5%);
+              cursor: pointer;
+            }
+          }
+          
+          &:before {
+            color: #8a8a87;
+            content: attr(data-label);
+            font-weight: 400;
+            left: 5px;
+            position: absolute;
+          }        
+        }
+      }
+    }
+  }
+  
+  @media all and (min-width: 768px) {
+    table {
+      border: 1px solid #eee;
+      border-collapse: collapse;
+      max-width: 992px;
+      text-align: left;
+      width: 100%;
+      
+      thead {
+        display: table-header-group;
+        
+        th {
+          padding: 10px;
+        }
+      }
+      
+      tbody {
+        font-size: .875em;
+        
+        tr {
+          border: none;
+          display: table-row;
+          
+          &:nth-child(odd) {
+            background: #eee;
+          }
+          
+          td {
+            display: table-cell;
+            font-weight: 400;
+            padding: 10px;
+            text-align: left;
+            
+            button {
+              display: inline-block;
+              padding: 10px 15px;
+              position: initial;
+              transform: translate(0);
+              width: auto;
+            }
+            
+            &:before {
+              display: none;
+            }
+            
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }

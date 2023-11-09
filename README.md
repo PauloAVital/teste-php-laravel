@@ -44,3 +44,24 @@ Boa sorte!
 2. Copiando arquivo env - cp .env.example .env
 3. composer install
 4. php artisan key:generate
+
+### Passos para realizar a Task-1
+1. Foi modificado a tabela categories colocando o increments no [ ID ] e acrescentando o campo activate.
+2. Na tabela documents Foi corrigida a forma de realizar um relacionamento entre a tabela categories e documents mantendo assim sua integridade
+* increments no [ ID ] e acrescentando o campo activate.
+3. A model da tabela categories foi criado respeitando o relacionamento entre ela a a tabela documents, também foi criado a rules ( regras ) para serem sempre adicionados campos necessários para a integração da mesma
+4. A model da tabela documents foi criado respeitando o relacionamento entre ela a a tabela categories, também foi criado a rules ( regras ) para serem sempre adicionados campos necessários para a integração da mesma
+
+5. Segue imagem do migration seeds ![Título da imagem](img-readm\migrate_seeds.png)
+
+### Passos para realizar a Task-2
+1. Na tela de abertura do ambiente conforme imagem criei um button de upload para realizar o procedimento das filas do json a ser upado.
+2. Foi desenvolvida validação do tipo de arquivo que está sendo upado em liguagem ( javascript )
+3. Foi feito o tratamento em ( jquery ) para o envio do json a ser processado e inserido na tabela conforme solicitado respeitando as regras de relacionamento entre as tabelas.
+4. Foi criado um designer bem ( simples ) apenas para demonstrar o conhecimento em css, html, javascript e jquery e também a organização dos mesmos.
+![Título da imagem](img-readm\Tela_task_2.png)
+5. Para uma vizualização mais amigavel retornei os dados para mostra em tabela caso o mesmo tenha tido sucesso na inserção segue imagens.
+6. No BackEnd foi desenvolvido o critério de tratamento dos dados recebidos do Json para que não houve retundancia e mantendo o relacionamento entre as tabelas.
+![Título da imagem](img-readm\Base_1.png)
+![Título da imagem](img-readm\Base_2.png)
+
