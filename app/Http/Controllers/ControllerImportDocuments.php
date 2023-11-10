@@ -40,7 +40,7 @@ class ControllerImportDocuments extends Controller
                 return response()->json(
                     ['success'=> false,
                      'data' => [],
-                     'message => "Erro ao realizar o cadastro"']
+                     'message' => $returnProcess['message']]
                 );
             }
         } catch (Exception $e) {
@@ -52,7 +52,32 @@ class ControllerImportDocuments extends Controller
         
         try {
             
+            
             foreach ($json_documents as &$valor) {
+                
+                // Regras de Validação
+                $ret_valid_content = $this->validConteudo($valor['conteúdo']);
+                $ret_valid = $this->validCategoriesTitle(
+                    $valor['categoria'], 
+                    $valor['titulo']
+                );
+
+                /**
+                 * ATENÇÃO GABRIEL 
+                 * Conforme lhe passe vou deixar comentado essa validação
+                 * para que possa acompanhar o fluxo de inserção na base de dados
+                 * pois a regra que me mandou não é compativel com o Json que esta
+                 * no test
+                 */
+                /*if (($ret_valid == false) ||
+                    ($ret_valid_content == false)) {
+                    return response()->json([
+                        'success'=> false, 
+                        'message' => 'erro de registro inválido',
+                        400
+                    ]);
+                }*/
+                
                 // Insert Table Categories
                 /*
                 * Verifica se a categoria ja está cadastrada
@@ -119,5 +144,43 @@ class ControllerImportDocuments extends Controller
                 400
             ]);
         }
+    }
+
+    public function validConteudo($conteudo) {
+        return (strlen($conteudo) <= 1250) ? true : false;
+    }
+
+    public function validCategoriesTitle($categories, $title) {
+        $ret = false;
+        switch ($categories) {
+            case 'Remessa':
+                if (strpos($title, 'semestre') !== false) {
+                    $ret = true;
+                }
+                break;
+            case 'Remessa Parcial':
+                $meses = array(
+                    'Janeiro',
+                    'Fevereiro',
+                    'Março',
+                    'Abril',
+                    'Maio',
+                    'Junho',
+                    'Julho',
+                    'Agosto',
+                    'Setembro',
+                    'Outubro',
+                    'Novembro',
+                    'Dezembro'
+                );
+                foreach ($meses as &$valor) {
+                    if (strpos($title, $valor) !== false) {
+                        $ret = true;
+                    }
+                }                
+                break;
+        }
+        return $ret;
+        
     }
 }

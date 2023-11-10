@@ -65,3 +65,11 @@ Boa sorte!
 ![Título da imagem](img-readm\Base_1.png)
 ![Título da imagem](img-readm\Base_2.png)
 
+
+### Passos para realizar a Task-3
+1. comando para realizar o teste Unitário: 
+* ./vendor/bin/phpunit app/Http/Test/ControllerImportDocumentsTest.php
+2. Conforme descrito no código devido a regra que me mandou acima a mesma não consegue validar o fluxo de inserção dos dados Json, por isso deixe-a comentada na (ControllerImportDocuments.php) para analiza-la.
+![Título da imagem](img-readm\testUnitario.png)
+3. Fico no aguardo do seu Retorno Gabriel.
+
